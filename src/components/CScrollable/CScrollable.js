@@ -1,0 +1,40 @@
+import React from "react";
+import { ScrollView } from "react-native";
+import { styles } from "./styles";
+export const CScrollable = ({
+  style,
+  horizontal,
+  hide,
+  margin,
+  padding,
+  mv,
+  mh,
+  pv,
+  ph,
+  height,
+  width,
+  refreshControl,
+  children,
+}) => {
+  return (
+    <ScrollView
+      horizontal={horizontal}
+      showsVerticalScrollIndicator={!hide}
+      showsHorizontalScrollIndicator={!hide}
+      refreshControl={refreshControl}
+      contentContainerStyle={styles.scroller(
+        style,
+        margin,
+        mv,
+        mh,
+        padding,
+        pv,
+        ph,
+        height,
+        width
+      )}
+    >
+      {children}
+    </ScrollView>
+  );
+};
